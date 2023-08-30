@@ -1,5 +1,6 @@
 public class Board {
     String [][] array = new String[5][5];
+    //int len = array.length;
     public Board() {
         for(int row = 0; row < array.length; row++){
 
@@ -30,17 +31,24 @@ public class Board {
 
     public void placeShips(int coordinates) {
 
-            //int row = String.valueOf(coordinates).charAt(0);
-            //System.out.println(row);
         int row = coordinates / 10;  // Extract the first digit
         int col = coordinates % 10;  // Extract the second digit
             array[row][col] = "@";
 
     }
 
-    public boolean checkIfHit(int row, int col, Board enemyBoard){//Might not need this.
-        boolean hit = false;
+    public boolean checkIfHit(int row, int col, Board board) {//Might not need this.
+       // boolean hit = false;
 
-        if()
+                if(board.array[row][col].equals("@")){
+                    System.out.println("You hit the bugger");
+                    return true;
+                } else{
+                    System.out.println("You missed");
+                    return false;
+                }
+
+            }
+
     }
-}
+

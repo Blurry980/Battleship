@@ -11,7 +11,7 @@ public class Player {
 
     public Board placeShips(){
         int i = 0;
-        while (i != 5){
+        while (i != 3){
             System.out.println("Coordinates: ");
             int coordinates = Integer.valueOf(scnr.nextLine());
             if(coordinates < 0 || coordinates >= 55 || (coordinatesUsed.contains(coordinates))) {
@@ -36,13 +36,22 @@ public class Player {
         System.out.println("Enter coordinates to fire upon.");
         System.out.println("Example: Typing '23' means row 2, column 3.");
         int coordinates = scnr.nextInt();
-        if(coordinates < 0 || coordinates >= 55 || (coordinatesUsed.contains(coordinates))) {
+        if(coordinates < 0 || coordinates >= 55) {
 
             System.out.println("Invalid coordinates");
 
         } else {
             int row = coordinates / 10;  // Extract the first digit
             int col = coordinates % 10;  // Extract the second digit
+
+            System.out.println(row);
+            System.out.println(col);
+            System.out.println("Board1");
+            board1.printBoard();
+            System.out.println("board2");
+            board2.printBoard();
+
+           board2.checkIfHit(row,col,board2);
 
 
         }
